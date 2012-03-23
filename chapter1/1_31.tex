@@ -1,0 +1,31 @@
+\subsection*{Problem 1.1.31}
+当$n = 4k$时，我们可以将所有的点平均分到4个集合中，我们可以构造出下图，满足$G \cong \overline{G}$，其中$*$是$K_k$，而$::$是indenpendent set，即$\overline{*} \cong ::$，两个集合连接表示两个集合内的任意一对点都有一条边相连 \\
+\begin{tikzpicture}
+
+\begin{scope}[xshift=2cm]
+\GraphInit[vstyle=Dijkstra]
+\SetGraphUnit{2}
+\renewcommand*{\VertexLineWidth}{1pt}
+\renewcommand*{\VertexTextColor}{blue}
+\Vertex[x = 0, y = 0, L = *]{A}
+\Vertex[x = 1, y = 0, L = ::]{B}
+\Vertex[x = 1, y = 1, L = *]{C}
+\Vertex[x = 0, y = 1, L = ::]{D}
+\Edges(B, A, C, D)
+\end{scope}
+
+\begin{scope}[xshift=5cm]
+\GraphInit[vstyle=Dijkstra]
+\SetGraphUnit{2}
+\renewcommand*{\VertexLineWidth}{1pt}
+\renewcommand*{\VertexTextColor}{blue}
+\Vertex[x = 0, y = 0, L = ::]{A}
+\Vertex[x = 1, y = 0, L = *]{B}
+\Vertex[x = 1, y = 1, L = ::]{C}
+\Vertex[x = 0, y = 1, L = *]{D}
+\Edges(A, D, B, C)
+\end{scope}
+\end{tikzpicture}
+
+同理，当$n = 4k + 1$时，只需要将多的这个点连接$*$集合即可
+

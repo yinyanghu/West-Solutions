@@ -1,0 +1,46 @@
+\subsection*{Problem 1.2.28}
+\begin{tikzpicture}
+\GraphInit[vstyle=Hasse]
+\SetGraphUnit{1}
+\renewcommand*{\VertexLineWidth}{1pt}
+\renewcommand*{\VertexTextColor}{blue}
+\SetVertexNoLabel
+\Vertex{A}
+\WE(A){B}
+\WE(B){C}
+\SO(A){D}
+\EA(A){E}
+\NO(E){F}
+\EA(E){G}
+\EA(G){H}
+\Edges(C, B, A, D, C)
+\Edges(C, F, H, G, E, F)
+\Edge(D)(H)
+
+\begin{scope}[xshift=5cm]
+\GraphInit[vstyle=Dijkstra]
+\SetGraphUnit{1}
+\renewcommand*{\VertexLineWidth}{1pt}
+\renewcommand*{\VertexTextColor}{blue}
+\SetVertexNoLabel
+\Vertex[x = 0, y = 0]{A}
+\Vertex[x = 1, y = 0]{B}
+\Vertex[x = 2, y = 0]{C}
+\Vertex[x = 3, y = 0]{D}
+\Vertex[x = 0, y = 1]{E}
+\Vertex[x = 1, y = 1]{F}
+\Vertex[x = 2, y = 1]{G}
+\Vertex[x = 3, y = 1]{H}
+\end{scope}
+\Edges(A, B, G, H, D, C, F, E, A)
+\Edge(B)(F)
+\Edge(C)(G)
+\end{tikzpicture}
+
+
+
+\begin{enumerate}
+	\item	only
+	\item	not only
+\end{enumerate}
+

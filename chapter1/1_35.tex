@@ -1,0 +1,32 @@
+\subsection*{Problem 1.1.35}
+当$n = 3k$时，我们可以将所有的点平均分到3个集合中，构造下图，其中$*$是$K_k$ \\
+
+\begin{tikzpicture}
+\GraphInit[vstyle=Dijkstra]
+\SetGraphUnit{2}
+\renewcommand*{\VertexLineWidth}{1pt}
+\renewcommand*{\VertexTextColor}{blue}
+\Vertex[x = 0, y = -1, L = *]{A}
+\Vertex[x = 0, y = 1, L = *]{B}
+\Vertex[x = 1.732, y = 0, L = *]{C}
+\Edges(A, B, C, A)
+
+\begin{scope}[xshift=5cm]
+\GraphInit[vstyle=Dijkstra]
+\SetGraphUnit{2}
+\renewcommand*{\VertexLineWidth}{1pt}
+\renewcommand*{\VertexTextColor}{blue}
+\Vertex[x = 0, y = -1, L = *]{A}
+\Vertex[x = 0, y = 1, L = *]{B}
+\Vertex[x = 1.732, y = 0, L = *]{C}
+\SetVertexNoLabel
+\Vertex[x = 0.5773, y = 0]{D}
+\Edges(A, B, C, A)
+\Edge(D)(A)
+\Edge(D)(B)
+\Edge(D)(C)
+\end{scope}
+\end{tikzpicture}
+
+同理，当$n = 3k + 1$时，只需要将多的这个点连接$A,B,C$集合即可
+

@@ -1,0 +1,14 @@
+\subsection*{Problem 1.2.20}
+由于$v$是一个cut-vertex，所以原图可以化为下图的形式，其中$A, B$是disconnected，所以在图$\overline{G}$中，除去$v$的所有点都必然是connected，即$\overline{G} - v$是connected \\
+
+\begin{tikzpicture}
+\GraphInit[vstyle=Dijkstra]
+\SetGraphUnit{2}
+\renewcommand*{\VertexLineWidth}{1pt}
+\renewcommand*{\VertexTextColor}{blue}
+\Vertex[L = v]{v}
+\WE(v){A}
+\EA(v){B}
+\Edges(A, v, B)
+\end{tikzpicture}
+

@@ -1,0 +1,40 @@
+\subsection*{Problem 1.1.38}
+$\Rightarrow$：因为图$G$能decomposes into claws，所以对于两个claws，他们中间的点不能直接相连，即不会出现这种情况：
+
+\begin{tikzpicture}
+\GraphInit[vstyle=Dijkstra]
+\SetGraphUnit{2}
+\renewcommand*{\VertexLineWidth}{1pt}
+\renewcommand*{\VertexTextColor}{blue}
+\SetVertexNoLabel
+\Vertex[x = 0, y = -1]{A}
+\Vertex[x = 0, y = 1]{B}
+\Vertex[x = 1.732, y = 0]{C}
+\Vertex[x = 3.732, y = 0]{D}
+\Vertex[x = 5.464, y = 1]{E}
+\Vertex[x = 5.464, y = -1]{F}
+\Edge(C)(B)
+\Edge(C)(A)
+\Edge(C)(D)
+\Edge(D)(E)
+\Edge(D)(F)
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\GraphInit[vstyle=Dijkstra]
+\SetGraphUnit{2}
+\renewcommand*{\VertexLineWidth}{1pt}
+\renewcommand*{\VertexTextColor}{blue}
+\Vertex[x = 0, y = -1, L = leaf]{A}
+\Vertex[x = 0, y = 1, L = leaf]{B}
+\Vertex[x = 1.732, y = 0, L = root]{C}
+\Vertex[x = 3.732, y = 0, L = leaf]{D}
+\Edge(C)(B)
+\Edge(C)(A)
+\Edge(C)(D)
+\end{tikzpicture}
+即在不同的claw之间，只存在leaf之间相连 \\
+所以所有claws的root构成一个independent set，所有的leaf构成一个independent set，所以$G$是一个二分图 \\
+
+$\Leftarrow$：由于$G$是一个二分图，且每个点的度数为3，任取其中的一个independent set，则集合中的每个点作为claw的root，则$G$ decomposes into claws
+

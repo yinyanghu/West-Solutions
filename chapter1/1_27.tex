@@ -1,0 +1,4 @@
+\subsection*{Problem 1.1.27}
+由于图中最小环为$C_5$且每个点的度数至少是$k$，则对于一个点$x$，其至少有$k$个neighbors，且每对neighbors都不相连（否则会出现$C_3$），然后每个$x$的neighbors必然有$k - 1$个$x$的neighbors的neighbors，且除$x$外没有两个$x$的neighbors有相同的的neighbors，所以$\abs{V_G} \geq 1 + k + k(k - 1) = k^2 + 1$ \\
+\indent 当$k = 2$时，$C_5$；当$k = 3$时，Petersen Graph
+

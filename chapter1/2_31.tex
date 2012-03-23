@@ -1,0 +1,6 @@
+\subsection*{Problem 1.2.31}
+\begin{enumerate}
+	\item	因为$n \leq 2^k$，将$K_n$的$n$个点进行从0到$n - 1$编号，将其用二进制表示，总共$k$位；要构造$k$个二分图，使其union为$K_n$，则可以对于$k$位中的每一位，所有是1的点放在一个集合中，所有是0的点放在一个集合中，添加所有端点在分别在两个集合中的边，形成一个二分图
+	\item	因为总共就$k$位编码，若$n > 2^k$，则必有两个点的编码相同，则$\bigcup_{i \leq k} G_i \neq K_n$，矛盾，所以$n \leq 2^k$
+\end{enumerate}
+
